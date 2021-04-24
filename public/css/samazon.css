@@ -117,6 +117,20 @@ label {
     color: #ffffff;
 }
 
+/* サイドバー */
+.samazon-sidebar-category-label {
+    width: 156px;
+    height: 20px;
+    font-family: YuGo;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #191919;
+}
+
 
 .samazon-login-input {
     border-radius: 2px;
@@ -185,3 +199,19 @@ label {
 .text-favorite {
     color: #0fbe9f;
 }
+
+/* ユーザー情報 */
+
+.user-edit-label {
+    cursor: pointer;
+    cursor: hand;
+  }
+
+
+/* お気に入り */
+
+.samazon-favorite-add-cart {
+    border-radius: 2px;
+    background-color: #0fbe9f;
+}
+

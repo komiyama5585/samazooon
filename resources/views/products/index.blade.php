@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+{{$categories}}
+
 <div class="row">
     <div class="col-9">
         <div class="container mt-4">
@@ -22,6 +25,7 @@
                 @endforeach
             </div>
         </div>
+        {{ $products->links() }}
     </div>
 </div>
 @endsection

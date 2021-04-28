@@ -38,7 +38,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $category = new Category();
+         $category->name = $request->input('name');
+         $category->description = $request->input('description');
+         $category->major_category_name = $request->input('major_category_name');
+         $category->save();
+
+         return redirect("/dashboard/categories");
     }
 
     /**
@@ -58,9 +64,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('dashboard.categories.edit', compact('category'));
     }
 
     /**
@@ -70,9 +76,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+         $category->name = $request->input('name');
+         $category->description = $request->input('description');
+         $category->major_category_name = $request->input('major_category_name');
+         $category->update();
+
+         return redirect("/dashboard/categories");
     }
 
     /**
@@ -81,8 +92,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+         $category->delete();
+
+         return redirect("/dashboard/categories");
     }
 }

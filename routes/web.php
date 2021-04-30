@@ -26,6 +26,7 @@ Route::put('users/mypage', 'UserController@update')->name('mypage.update');
 Route::get('users/mypage/favorite', 'UserController@favorite')->name('mypage.favorite');
 Route::get('users/mypage/password/edit', 'UserController@edit_password')->name('mypage.edit_password');
 Route::put('users/mypage/password', 'UserController@update_password')->name('mypage.update_password');
+Route::delete('users/mypage/delete', 'UserController@destroy')->name('mypage.destroy');
 
 
 Route::post('products/{product}/reviews', 'ReviewController@store');
@@ -46,4 +47,5 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
      Route::resource('major_categories', 'Dashboard\MajorCategoryController')->middleware('auth:admins');
      Route::resource('categories', 'Dashboard\CategoryController')->middleware('auth:admins');
      Route::resource('products', 'Dashboard\ProductController')->middleware('auth:admins');
+     Route::resource('users', 'Dashboard\UserController')->middleware('auth:admins');
  });
